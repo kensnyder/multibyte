@@ -1,0 +1,46 @@
+{
+  "name": "multibyte",
+  "version": "1.0.0",
+  "description": "Unicode-aware string functions",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "type": "module",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kensnyder/react-thermals.git"
+  },
+  "keywords": [
+    "multibyte",
+    "unicode",
+    "utf8",
+    "utf-8",
+    "utf-16",
+    "utf16",
+    "multibyte safe",
+    "multibyte-safe",
+    "unicode aware",
+    "unicode-aware",
+    "emoji",
+    "emoji-safe"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "test-watch": "vitest",
+    "clean": "rimraf dist/ && mkdir dist && touch dist/.gitkeep && mkdir dist/esm && mkdir dist/cjs",
+    "build-esm": "npx -p typescript tsc --project tsconfig.esm.json",
+    "build-cjs": "npx -p typescript tsc --project tsconfig.cjs.json",
+    "build": "npm run clean && npm run build-esm && npm run build-cjs",
+    "coverage": "vitest run --coverage",
+    "view-coverage": "open ./coverage/lcov-report/index.html"
+  },
+  "author": "Ken Snyder <kendsnyder@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitest/coverage-istanbul": "0.28.5",
+    "prettier": "2.8.4",
+    "rimraf": "4.1.2",
+    "typescript": "4.9.5",
+    "vitest": "0.28.5"
+  }
+}
