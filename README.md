@@ -53,7 +53,7 @@ split('a🚀c', ''); // ✅ ["a", "🚀", "c"] ✅
 
 // JavaScript slices strings along UTF-16 boundaries, not Unicode characters
 'a🚀cdef'.slice(0, 2); //       ❌ "a\ud83d"
-truncateBytes('a🚀cdef', 2); // ✅ "a"
+truncateBytes('a🚀cdef', 2); // ✅ "a🚀"
 ```
 
 ## BOM (Byte order mark) - U+FEFF
