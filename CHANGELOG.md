@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 - Jul 13, 2024
+
+- Fix readme example
+
 ## 1.0.0 - Jul 13, 2024
 
 - Update dependencies (no breaking changes)

@@ -1,9 +1,9 @@
 # multibyte
 
-[![NPM Link](https://img.shields.io/npm/v/multibyte?v=1.0.0)](https://npmjs.com/package/multibyte)
-[![Build Status](https://ci.appveyor.com/api/projects/status/nk7pd6u6p2hqpeac?svg=true&v=1.0.0)](https://ci.appveyor.com/project/kensnyder/multibyte)
-[![Code Coverage](https://codecov.io/gh/kensnyder/multibyte/branch/main/graph/badge.svg?token=KW4PAS3KKM&v=1.0.0)](https://codecov.io/gh/kensnyder/multibyte)
-[![ISC License](https://img.shields.io/npm/l/multibyte.svg?v=1.0.0)](https://opensource.org/licenses/ISC)
+[![NPM Link](https://img.shields.io/npm/v/multibyte?v=1.0.1)](https://npmjs.com/package/multibyte)
+[![Build Status](https://ci.appveyor.com/api/projects/status/nk7pd6u6p2hqpeac?svg=true&v=1.0.1)](https://ci.appveyor.com/project/kensnyder/multibyte)
+[![Code Coverage](https://codecov.io/gh/kensnyder/multibyte/branch/main/graph/badge.svg?token=KW4PAS3KKM&v=1.0.1)](https://codecov.io/gh/kensnyder/multibyte)
+[![ISC License](https://img.shields.io/npm/l/multibyte.svg?v=1.0.1)](https://opensource.org/licenses/ISC)
 
 multibyte provides common string functions that respect multibyte Unicode characters.
 
