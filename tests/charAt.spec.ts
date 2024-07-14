@@ -36,7 +36,7 @@ describe('charAt()', () => {
   });
   it('should throw if arg is not a string', () => {
     const thrower = () => {
-      // @ts-ignore
+      // @ts-expect-error
       charAt(55, 0);
     };
     expect(thrower).toThrow(TypeError);

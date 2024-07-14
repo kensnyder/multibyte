@@ -40,7 +40,7 @@ describe('truncateBytes()', () => {
   });
   it('should throw if arg is not a string', () => {
     const thrower = () => {
-      // @ts-ignore
+      // @ts-expect-error
       truncateBytes(55, 2);
     };
     expect(thrower).toThrow(TypeError);
