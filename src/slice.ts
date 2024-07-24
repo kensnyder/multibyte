@@ -6,7 +6,7 @@ export default function slice(
   if (typeof str !== 'string') {
     throw new TypeError('slice(str, start, end) must receive a string');
   }
-  const strArr = [...str];
+  const strArr = Array.from(str);
   if (strArr[0] === '\uFEFF') {
     strArr.shift();
   }

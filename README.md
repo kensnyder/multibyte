@@ -3,6 +3,9 @@
 [![NPM Link](https://img.shields.io/npm/v/multibyte?v=1.0.2)](https://npmjs.com/package/multibyte)
 [![Build Status](https://ci.appveyor.com/api/projects/status/nk7pd6u6p2hqpeac?svg=true&v=1.0.2)](https://ci.appveyor.com/project/kensnyder/multibyte)
 [![Code Coverage](https://codecov.io/gh/kensnyder/multibyte/branch/main/graph/badge.svg?token=KW4PAS3KKM&v=1.0.2)](https://codecov.io/gh/kensnyder/multibyte)
+[![Gzipped Size](https://badgen.net/bundlephobia/minzip/multibyte/?label=minzipped+size)](https://bundlephobia.com/package/multibyte@1.0.2)
+[![Dependency details](https://badgen.net/bundlephobia/dependency-count/multibyte)](https://www.npmjs.com/package/multibyte?activeTab=dependencies)
+[![Tree shakeable](https://badgen.net/bundlephobia/tree-shaking/multibyte)](https://www.npmjs.com/package/multibyte)
 [![ISC License](https://img.shields.io/npm/l/multibyte.svg?v=1.0.2)](https://opensource.org/licenses/ISC)
 
 multibyte provides common string functions that respect multibyte Unicode characters.
@@ -19,7 +22,7 @@ take more than 2 bytes (like newer emoji) get split into 2 code points in many
 situations.
 
 If you display Unicode text from a UTF-8 source, you need these multibyte
-functions that take advantage of the fact that `Array.from()` is Unicode safe.
+functions that take advantage of the fact that `Array.from(string)` is Unicode safe.
 
 ```js
 import {

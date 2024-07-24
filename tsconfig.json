@@ -2,7 +2,6 @@
   "compilerOptions": {
     "module": "ESNext",
     "target": "ESNext",
-    "outDir": "./dist",
     "declaration": true,
     "removeComments": false,
     "noEmit": false,
@@ -10,13 +9,13 @@
     "isolatedModules": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "sourceMap": false,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx"
   },
   "include": [
-    "src/**/*.ts"
+    "src/*.ts"
   ],
   "files": ["index.ts"]
 }

@@ -1,10 +1,18 @@
 {
   "name": "multibyte",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Unicode-aware string functions",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "sideEffects": false,
   "repository": {
     "type": "git",
@@ -27,16 +35,16 @@
   "scripts": {
     "test": "vitest run",
     "test-watch": "vitest",
-    "clean": "rimraf dist/ && mkdir dist && touch dist/.gitkeep && mkdir dist/esm && mkdir dist/cjs",
-    "build-esm": "npx -p typescript tsc --project tsconfig.esm.json",
-    "build-cjs": "npx -p typescript tsc --project tsconfig.cjs.json",
-    "build": "npm run clean && npm run build-esm && npm run build-cjs",
+    "build": "npm run build:clean && npm run build:dts && npm run build:esm && npm run build:cjs",
+    "build:clean": "rimraf dist/ && mkdir dist && touch dist/.gitkeep",
+    "build:dts": "yes | npx dts-bundle-generator -o dist/index.d.ts index.ts",
+    "build:esm": "yes | npx esbuild index.ts --bundle --platform=node --format=esm --outfile=dist/index.mjs",
+    "build:cjs": "yes | npx esbuild index.ts --bundle --platform=node --format=cjs --outfile=dist/index.cjs",
     "coverage": "vitest run --coverage",
     "view-coverage": "open ./coverage/lcov-report/index.html"
   },
   "author": "Ken Snyder <kendsnyder@gmail.com>",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "@vitest/coverage-istanbul": "2.0.2",
     "prettier": "3.3.3",

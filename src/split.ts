@@ -3,7 +3,7 @@ export default function split(str: string, on: string = ''): string[] {
     throw new TypeError('split(str, on) must receive strings');
   }
   if (on === '') {
-    const strArr = [...str];
+    const strArr = Array.from(str);
     if (strArr[0] === '\uFEFF') {
       strArr.shift();
     }
