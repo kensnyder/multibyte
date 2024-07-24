@@ -1,11 +1,13 @@
 # multibyte
 
-[![NPM Link](https://img.shields.io/npm/v/multibyte?v=1.0.4)](https://npmjs.com/package/multibyte)
+[![NPM Link](https://badgen.net/npm/v/multibyte?v=1.0.4)](https://npmjs.com/package/multibyte)
+[![Language](https://badgen.net/static/language/TS?v=1.0.4)](https://github.com/search?q=repo:kensnyder/multibyte++language:TypeScript&type=code)
 [![Build Status](https://github.com/kensnyder/multibyte/actions/workflows/workflow.yml/badge.svg?v=1.0.4)](https://github.com/kensnyder/multibyte/actions)
-[![Gzipped Size](https://badgen.net/bundlephobia/minzip/multibyte/?label=minzipped&v=1.0.4)](https://bundlephobia.com/package/multibyte@1.0.4)
+[![Code Coverage](https://codecov.io/gh/kensnyder/multibyte/branch/main/graph/badge.svg?v=1.0.4)](https://codecov.io/gh/kensnyder/multibyte)
+[![Gzipped Size](https://badgen.net/bundlephobia/minzip/multibyte?label=minzipped&v=1.0.4)](https://bundlephobia.com/package/multibyte@1.0.4)
 [![Dependency details](https://badgen.net/bundlephobia/dependency-count/multibyte?v=1.0.4)](https://www.npmjs.com/package/multibyte?activeTab=dependencies)
 [![Tree shakeable](https://badgen.net/bundlephobia/tree-shaking/multibyte?v=1.0.4)](https://www.npmjs.com/package/multibyte)
-[![ISC License](https://img.shields.io/npm/l/multibyte.svg?v=1.0.4)](https://opensource.org/licenses/ISC)
+[![ISC License](https://badgen.net/github/license/kensnyder/multibyte?v=1.0.4)](https://opensource.org/licenses/ISC)
 
 multibyte provides common string functions that respect multibyte Unicode characters.
 
