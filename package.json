@@ -1,6 +1,6 @@
 {
   "name": "multibyte",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Unicode-aware string functions",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -14,6 +14,11 @@
     }
   },
   "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kensnyder/multibyte.git"
@@ -36,7 +41,7 @@
     "test": "vitest run",
     "test-watch": "vitest",
     "build": "npm run build:clean && npm run build:dts && npm run build:esm && npm run build:cjs",
-    "build:clean": "rimraf dist/ && mkdir dist && touch dist/.gitkeep",
+    "build:clean": "rimraf dist/ && mkdir dist",
     "build:dts": "yes | npx dts-bundle-generator -o dist/index.d.ts index.ts",
     "build:esm": "yes | npx esbuild index.ts --bundle --platform=node --format=esm --outfile=dist/index.mjs",
     "build:cjs": "yes | npx esbuild index.ts --bundle --platform=node --format=cjs --outfile=dist/index.cjs",
