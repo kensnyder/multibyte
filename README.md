@@ -1,12 +1,12 @@
 # multibyte
 
-[![NPM Link](https://img.shields.io/npm/v/multibyte?v=1.0.2)](https://npmjs.com/package/multibyte)
-[![Build Status](https://ci.appveyor.com/api/projects/status/nk7pd6u6p2hqpeac?svg=true&v=1.0.2)](https://ci.appveyor.com/project/kensnyder/multibyte)
-[![Code Coverage](https://codecov.io/gh/kensnyder/multibyte/branch/main/graph/badge.svg?token=KW4PAS3KKM&v=1.0.2)](https://codecov.io/gh/kensnyder/multibyte)
-[![Gzipped Size](https://badgen.net/bundlephobia/minzip/multibyte/?label=minzipped+size)](https://bundlephobia.com/package/multibyte@1.0.2)
+[![NPM Link](https://img.shields.io/npm/v/multibyte?v=1.0.3)](https://npmjs.com/package/multibyte)
+[![Build Status](https://ci.appveyor.com/api/projects/status/nk7pd6u6p2hqpeac?svg=true&v=1.0.3)](https://ci.appveyor.com/project/kensnyder/multibyte)
+[![Code Coverage](https://codecov.io/gh/kensnyder/multibyte/branch/main/graph/badge.svg?token=KW4PAS3KKM&v=1.0.3)](https://codecov.io/gh/kensnyder/multibyte)
+[![Gzipped Size](https://badgen.net/bundlephobia/minzip/multibyte/?label=minzipped+size)](https://bundlephobia.com/package/multibyte@1.0.3)
 [![Dependency details](https://badgen.net/bundlephobia/dependency-count/multibyte)](https://www.npmjs.com/package/multibyte?activeTab=dependencies)
 [![Tree shakeable](https://badgen.net/bundlephobia/tree-shaking/multibyte)](https://www.npmjs.com/package/multibyte)
-[![ISC License](https://img.shields.io/npm/l/multibyte.svg?v=1.0.2)](https://opensource.org/licenses/ISC)
+[![ISC License](https://img.shields.io/npm/l/multibyte.svg?v=1.0.3)](https://opensource.org/licenses/ISC)
 
 multibyte provides common string functions that respect multibyte Unicode characters.
 
@@ -35,7 +35,7 @@ import {
 } from 'multibyte';
 
 // JavaScript String.prototype.charAt() can return a UTF-16 surrogate
-'a🚀c'.charAt(1); //  ❌ "\ud83d"
+'a🚀c'.charAt(1); //  ❌ "\ud83d" (half a rocket)
 charAt('a🚀c', 1); // ✅ "🚀"
 
 // JavaScript String.prototype.codePointAt() can return a UTF-16 surrogate
@@ -47,7 +47,7 @@ codePointAt('🚀abc', 1); // ✅ 97 (the letter a)
 length('a🚀c'); // ✅ 3
 
 // JavaScript slices along UTF-16 boundaries, not Unicode characters
-'a🚀cdef'.slice(2, 3); //  ❌ "\ude80"
+'a🚀cdef'.slice(2, 3); //  ❌ "\ude80" (half a rocket)
 slice('a🚀cdef', 2, 3); // ✅ "c"
 
 // JavaScript splits along UTF-16 boundaries, not Unicode characters
@@ -55,7 +55,7 @@ slice('a🚀cdef', 2, 3); // ✅ "c"
 split('a🚀c', ''); // ✅ ["a", "🚀", "c"] ✅
 
 // JavaScript slices strings along UTF-16 boundaries, not Unicode characters
-'a🚀cdef'.slice(0, 2); //       ❌ "a\ud83d"
+'a🚀cdef'.slice(0, 2); //       ❌ "a\ud83d" (half a rocket)
 truncateBytes('a🚀cdef', 2); // ✅ "a" (including the rocket would be 3 total bytes)
 ```
 
