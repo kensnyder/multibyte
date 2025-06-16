@@ -17,8 +17,8 @@ var __copyProps = (to, from, except, desc) => {
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // index.ts
-var multibyte_exports = {};
-__export(multibyte_exports, {
+var index_exports = {};
+__export(index_exports, {
   charAt: () => charAt,
   codePointAt: () => codePointAt,
   length: () => length,
@@ -26,7 +26,7 @@ __export(multibyte_exports, {
   split: () => split,
   truncateBytes: () => truncateBytes
 });
-module.exports = __toCommonJS(multibyte_exports);
+module.exports = __toCommonJS(index_exports);
 
 // src/charAt.ts
 function charAt(str, at = 0) {
@@ -119,9 +119,9 @@ function truncateBytes(str, max, ellipsis = "") {
   if (max <= 0) {
     return "";
   }
-  if (str.length < max) {
+  if (str.length <= max) {
     if (str.charAt(0) === "\uFEFF") {
-      str = str.slice(1);
+      return str.slice(1);
     }
     return str;
   }

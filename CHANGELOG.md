@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.5 - Jun 16, 2025
+
+- Update deps
+
 ## 1.0.1 - Jul 13, 2024
 
 - Fix readme example

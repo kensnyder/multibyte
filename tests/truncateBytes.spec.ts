@@ -2,6 +2,14 @@ import { describe, it, expect } from 'vitest';
 import truncateBytes from '../src/truncateBytes';
 
 describe('truncateBytes()', () => {
+  it('should do nothing if max is high', () => {
+    const result = truncateBytes('abc', 10);
+    expect(result).toBe('abc');
+  });
+  it('should do nothing if max is equal to length', () => {
+    const result = truncateBytes('abc', 3);
+    expect(result).toBe('abc');
+  });
   it('should work on ascii strings', () => {
     const result = truncateBytes('abc', 2);
     expect(result).toBe('ab');
@@ -33,6 +41,10 @@ describe('truncateBytes()', () => {
   it('should strip BOM', () => {
     const result = truncateBytes('\uFEFFa🚀c', 3);
     expect(result).toBe('a🚀');
+  });
+  it('should strip BOM if max is greater than string length', () => {
+    const result = truncateBytes('\uFEFFa🚀c', 10);
+    expect(result).toBe('a🚀c');
   });
   it('should strip BOM on high max', () => {
     const result = truncateBytes('\uFEFFa🚀c', 38);

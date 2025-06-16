@@ -89,9 +89,9 @@ function truncateBytes(str, max, ellipsis = "") {
   if (max <= 0) {
     return "";
   }
-  if (str.length < max) {
+  if (str.length <= max) {
     if (str.charAt(0) === "\uFEFF") {
-      str = str.slice(1);
+      return str.slice(1);
     }
     return str;
   }

@@ -11,10 +11,10 @@ export default function truncateBytes(
   if (max <= 0) {
     return '';
   }
-  if (str.length < max) {
+  if (str.length <= max) {
     if (str.charAt(0) === '\uFEFF') {
       // remove UTF-16 BOM
-      str = str.slice(1);
+      return str.slice(1);
     }
     return str;
   }
