@@ -3,6 +3,7 @@
 
 # IDE
 .idea
+temp
 
 # dependencies
 /node_modules
