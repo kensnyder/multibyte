@@ -4,7 +4,7 @@ export default function length(str: string): number {
   }
   const strArr = Array.from(str);
   if (strArr[0] === '\uFEFF') {
-    strArr.shift();
+    return strArr.length - 1;
   }
   return strArr.length;
 }
