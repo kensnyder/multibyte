@@ -8,23 +8,27 @@
 - **Git:** DO NOT BRANCH OR COMMIT without user review.
 - **Support:** Consult docs/web for weak knowledge; ask if tasks are ambiguous or you're stuck (large files/output).
 - **Environment:** Use `./temp` for temporary files.
+- **Runtime:** Use `bun`, `bunx` and `bunx --bun`. DO NOT use `node`, `npm` or `npx` without user approval.
 
 ### Repository File Structure
 - `/src`: Core logic. Each Unicode-safe function is implemented in its own file.
 - `/tests`: Unit tests corresponding to each source file.
 - `index.ts`: Main entry point exporting all public functions from `src/`.
 - `/dist`: Generated build artifacts (CommonJS, ESM, and type definitions).
-- `package.json`: Scripts, devDependencies (Vitest, esbuild, TypeScript), and metadata.
-- `vitest.config.ts` & `tsconfig.json`: Environment and compiler configuration.
+- `package.json`: Scripts, devDependencies (bun:test, esbuild, TypeScript), and metadata.
+- `bun.lockb` & `tsconfig.json`: Environment and compiler configuration.
 
 ### Commands and Tools
-- `npm run build`: Generates ESM, CJS, and DTS files using `esbuild`.
-- `npm run lint`: Checks formatting, imports and lint rules using `biome`.
-- `npm run format`: Formats all files in the project using `biome`.
-- `npm run test`: Executes the complete test suite using `vitest`.
-- `npm run test-watch`: Runs tests in watch mode for active development.
-- `npm run coverage`: Generates reports via `@vitest/coverage-istanbul`.
-- `npm run build:clean`: Removes the `dist/` directory to ensure a fresh build.
+- `bun run build`: Generates ESM, CJS, and DTS files using `esbuild`.
+- `bun run lint`: Checks formatting, imports and lint rules using `biome`.
+- `bun run format`: Formats all files in the project using `biome`.
+- `bun test`: Executes the complete test suite using `bun:test`.
+- `bun test --watch`: Runs tests in watch mode for active development.
+- `bun run coverage`: Generates reports via `bun test --coverage`.
+- `bun run build:clean`: Removes the `dist/` directory to ensure a fresh build.
+
+### Development Rules
+- **DO NOT USE NPM:** All development operations (install, test, build) must use `bun`.
 
 ### Coding Style Rules
 

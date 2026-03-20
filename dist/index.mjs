@@ -96,7 +96,7 @@ function truncateBytes(str, max, ellipsis = "") {
     return str;
   }
   let totalBytes = ellipsis.length;
-  let strArray = [];
+  const strArray = [];
   for (const char of str) {
     if (totalBytes === 0 && char === "\uFEFF") {
       continue;

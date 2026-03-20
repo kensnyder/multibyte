@@ -36,23 +36,20 @@
   "scripts": {
     "lint": "biome check",
     "format": "biome format --write",
-    "test": "vitest run",
-    "test-watch": "vitest",
-    "build": "npm run build:clean && npm run build:dts && npm run build:esm && npm run build:cjs",
-    "build:clean": "rimraf dist/ && mkdir dist",
-    "build:dts": "yes | npx dts-bundle-generator -o dist/index.d.ts index.ts",
-    "build:esm": "yes | npx esbuild index.ts --bundle --platform=node --format=esm --outfile=dist/index.mjs",
-    "build:cjs": "yes | npx esbuild index.ts --bundle --platform=node --format=cjs --outfile=dist/index.cjs",
-    "coverage": "vitest run --coverage",
-    "view-coverage": "open ./coverage/lcov-report/index.html"
+    "test": "bun test ./tests/",
+    "test-watch": "bun test --watch ./tests/",
+    "build": "bun run build:clean && bun run build:dts && bun run build:esm && bun run build:cjs",
+    "build:clean": "rm -rf dist/ && mkdir dist",
+    "build:dts": "yes | bunx dts-bundle-generator --project tsconfig.bundle-generator.json -o dist/index.d.ts ./index.ts && sed -i '' 's/WorkShape | null/WorkShape/g' dist/index.d.ts",
+    "build:esm": "bun build ./index.ts --bundle --platform=node --format=esm --outfile=dist/index.mjs",
+    "build:cjs": "bun build ./index.ts --bundle --platform=node --format=cjs --outfile=dist/index.cjs",
+    "coverage": "bun test --coverage ./tests/",
+    "view-coverage": "open ./coverage/index.html"
   },
   "author": "Ken Snyder <kendsnyder@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "2.4.8",
-    "@vitest/coverage-istanbul": "3.2.3",
-    "rimraf": "6.0.1",
-    "typescript": "5.9.3",
-    "vitest": "3.2.3"
+    "typescript": "5.9.3"
   }
 }
