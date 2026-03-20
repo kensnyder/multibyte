@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import codePointAt from '../src/codePointAt';
 
 describe('codePointAt()', () => {
@@ -36,7 +36,7 @@ describe('codePointAt()', () => {
   });
   it('should throw if arg is not a string', () => {
     const thrower = () => {
-      // @ts-ignore
+      // @ts-expect-error
       codePointAt(55, 0);
     };
     expect(thrower).toThrow(TypeError);

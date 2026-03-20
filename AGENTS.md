@@ -19,6 +19,8 @@
 
 ### Commands and Tools
 - `npm run build`: Generates ESM, CJS, and DTS files using `esbuild`.
+- `npm run lint`: Checks formatting, imports and lint rules using `biome`.
+- `npm run format`: Formats all files in the project using `biome`.
 - `npm run test`: Executes the complete test suite using `vitest`.
 - `npm run test-watch`: Runs tests in watch mode for active development.
 - `npm run coverage`: Generates reports via `@vitest/coverage-istanbul`.

@@ -19,7 +19,7 @@ export default function truncateBytes(
     return str;
   }
   let totalBytes = ellipsis.length;
-  let strArray = [];
+  const strArray = [];
   for (const char of str) {
     if (totalBytes === 0 && char === '\uFEFF') {
       // skip UTF-16 BOM

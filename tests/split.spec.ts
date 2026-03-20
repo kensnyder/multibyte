@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import split from '../src/split';
 
 describe('split()', () => {
@@ -32,14 +32,14 @@ describe('split()', () => {
   });
   it('should throw if "str" arg is not a string', () => {
     const thrower = () => {
-      // @ts-ignore
+      // @ts-expect-error
       split(55, '');
     };
     expect(thrower).toThrow(TypeError);
   });
   it('should throw if "on" arg is not a string', () => {
     const thrower = () => {
-      // @ts-ignore
+      // @ts-expect-error
       split('abc', 8);
     };
     expect(thrower).toThrow(TypeError);

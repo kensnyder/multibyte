@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import length from '../src/length';
 
 describe('length()', () => {
@@ -20,7 +20,7 @@ describe('length()', () => {
   });
   it('should throw if arg is not a string', () => {
     const thrower = () => {
-      // @ts-ignore
+      // @ts-expect-error
       length(55, 0);
     };
     expect(thrower).toThrow(TypeError);
