@@ -1,4 +1,4 @@
-export default function codePointAt(str: string, at: number = 0): number {
+export default function codePointAt(str: string, at: number = 0): number | undefined {
   if (typeof str !== 'string') {
     throw new TypeError('codePointAt(str, at) must receive a string');
   }
