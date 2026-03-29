@@ -63,3 +63,7 @@ truncateBytes('a🚀cdef', 2); // ✅ "a" (including the rocket would be 3 total
 ## BOM (Byte order mark) - U+FEFF
 
 Under the hood, all these functions strip a leading BOM if present.
+
+## Contributions and local development
+
+ [Bun](https://bun.sh) is required for testing and building the `multibyte` package.

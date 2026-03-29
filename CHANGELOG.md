@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.6 - Mar 29, 2026
+
+- Update deps
+- Switch to bun
+
 ## 1.0.5 - Jun 16, 2025
 
 - Update deps
