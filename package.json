@@ -1,6 +1,6 @@
 {
   "name": "multibyte",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Unicode-aware string functions",
   "type": "module",
   "main": "./dist/index.cjs",
