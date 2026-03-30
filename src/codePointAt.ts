@@ -5,7 +5,7 @@ export default function codePointAt(str: string, at: number = 0): number | undef
   if (at < 0) {
     return undefined;
   }
-  if (str.charAt(0) === '\uFEFF') {
+  if (str[0] === '\uFEFF') {
     at++;
   }
   for (const char of str) {

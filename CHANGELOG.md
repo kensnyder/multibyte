@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.7 - Mar 29, 2026
+
+- Follow benchmarks to increase perf
+- Minify dist
+
 ## 1.0.6 - Mar 29, 2026
 
 - Update deps

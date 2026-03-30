@@ -5,7 +5,7 @@ export default function charAt(str: string, at: number = 0): string {
   if (at < 0) {
     return '';
   }
-  if (str.charAt(0) === '\uFEFF') {
+  if (str[0] === '\uFEFF') {
     at += 1;
   }
   for (const char of str) {

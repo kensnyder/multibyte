@@ -11,26 +11,32 @@ export default function truncateBytes(
   if (max <= 0) {
     return '';
   }
+  const hasBOM = str[0] === '\uFEFF';
+  // Early exit if the string is definitely short enough
+  // Note: str.length is code units, which is always >= actual character count
   if (str.length <= max) {
-    if (str.charAt(0) === '\uFEFF') {
-      // remove UTF-16 BOM
+    if (hasBOM) {
       return str.slice(1);
     }
     return str;
   }
+
+  let result = '';
   let totalBytes = ellipsis.length;
-  const strArray = [];
+  let skip = hasBOM;
+
   for (const char of str) {
-    if (totalBytes === 0 && char === '\uFEFF') {
-      // skip UTF-16 BOM
+    if (skip) {
+      skip = false;
       continue;
     }
+
     totalBytes += char.length;
     if (totalBytes > max) {
       break;
     }
-    strArray.push(char);
+    result += char;
   }
-  strArray.push(ellipsis);
-  return strArray.join('');
+
+  return result + ellipsis;
 }
